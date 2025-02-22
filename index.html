@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonardo Barcelos - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: black;
+            color: #00FF00;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            border-bottom: 2px solid #00FF00;
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin: 20px auto;
+            width: 80%;
+        }
+        header h1 {
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #00FF00;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px auto;
+        }
+        .nav-box {
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 15px;
+            border: 1px solid #00FF00;
+            padding: 15px;
+            width: 120px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-box:hover {
+            transform: scale(1.1);
+            background-color: rgba(0, 255, 0, 0.2);
+        }
+        .nav-box a {
+            color: #FFA500;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .profile-picture {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 10px auto;
+            background: url('https://avatars.githubusercontent.com/u/82356894?v=4') no-repeat center center;
+            background-size: cover;
+            border: 2px solid #00FF00;
+        }
+        .glass-box {
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 15px;
+            border: 1px solid #00FF00;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            backdrop-filter: blur(10px);
+        }
+        .projetos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .projetos-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .projeto {
+            border: 1px solid #00FF00;
+            padding: 15px;
+            width: 35%;
+            transition: transform 0.3s ease-in-out;
+        }
+        .projeto:hover {
+            transform: scale(1.05);
+            background-color: rgba(0, 255, 0, 0.2);
+        }
+        .projeto img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        footer {
+            padding: 10px;
+            border-top: 2px solid #00FF00;
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: #FFA500;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".projetos-container").classList.add("show");
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Leonardo Barcelos</h1>
+        <div class="profile-picture"></div>
+        <p>Programmer C, C++, C#, and Assembly</p>
+        <div class="nav-container">
+            <div class="nav-box"><a href="#about">About</a></div>
+            <div class="nav-box"><a href="#projects">Projects</a></div>
+            <div class="nav-box"><a href="#contact">Contact</a></div>
+        </div> 
+    </header>
+    
+    <section id="about" class="glass-box">
+        <h2>About Me</h2>
+        <p>I hold a degree in Computer Science and have a strong passion for reverse engineering and bypass techniques. 
+        With expertise in game development, WPF, Arduino, and DLL injection, I specialize in analyzing and modifying 
+        software behavior at a low level. My work involves memory manipulation, debugging, and developing tools for performance 
+        optimization and security testing. I enjoy tackling complex technical challenges, constantly pushing the boundaries of 
+        system understanding and automation.</p>
+    </section>
+    
+    <section id="projects" class="glass-box">
+        <h2>Projects</h2>
+        <div class="projetos-container">
+            <div class="projeto">
+                <img src="https://camo.githubusercontent.com/d9f92d852794d50324b46569ece59d621b5554ffa821b97d342ecf5cdd175f0e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d432b2b2d3030353939433f7374796c653d666c61742d737175617265266c6f676f3d43253242253242266c6f676f436f6c6f723d7768697465" alt="Project 1">
+                <h3>ImGui-Dx9</h3>
+                <p>A C++ library for real-time memory reading and manipulation with DirectX 9 support. Designed as an In-Game Overlay, 
+                it captures and displays game-relevant information, offering in-depth insights and facilitating data analysis.</p>
+                <a href="https://github.com/lbarceloss/MemoryReaderDLL-Dx9-" target="_blank">View on GitHub</a>
+            </div>
+            <div class="projeto">
+                <img src="https://camo.githubusercontent.com/d5acbbb2c7ea47b4878facc15e06c745b693bea3d753ada9d585160ebef954da/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d432532332d3233393132303f7374796c653d666c61742d737175617265266c6f676f3d432532305368617270266c6f676f436f6c6f723d7768697465" alt="Project 2">
+                <h3>Mult-Client</h3>
+                <p>A C# project implementing a process manager to detect and manipulate the mutex of the game PangYa (ProjectG.exe). 
+                It allows finding, closing, and restarting the game instance when a mutex prevents re-execution.</p>
+                <a href="https://github.com/lbarceloss/PangYa-MC" target="_blank">View on GitHub</a>
+            </div>
+            <div class="projeto">
+                <img src="https://camo.githubusercontent.com/d5acbbb2c7ea47b4878facc15e06c745b693bea3d753ada9d585160ebef954da/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d432532332d3233393132303f7374796c653d666c61742d737175617265266c6f676f3d432532305368617270266c6f676f436f6c6f723d7768697465" alt="Project 3">
+                <h3>RIP-PangYa</h3>
+                <p>A C# tool for reading and editing memory in the game PangYa. It includes a converted version of an advanced calculator 
+                originally developed in JavaScript by Acrisio.</p>
+                <a href="https://github.com/lbarceloss/RIP-PangYa" target="_blank">View on GitHub</a>
+            </div>
+            <div class="projeto">
+                <img src="https://camo.githubusercontent.com/d5acbbb2c7ea47b4878facc15e06c745b693bea3d753ada9d585160ebef954da/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d432532332d3233393132303f7374796c653d666c61742d737175617265266c6f676f3d432532305368617270266c6f676f436f6c6f723d7768697465" alt="Project 4">
+                <h3>Memory-Reader</h3>
+                <p>An example C# code demonstrating how to open a process, duplicate a handle, and read memory values using Windows API calls 
+                (kernel32.dll).</p>
+                <a href="https://github.com/lbarceloss/CSharpMemoryReader" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="contact" class="glass-box">
+        <h2>Contact</h2>
+        <p>Find me on:</p>
+        <div class="social-links">
+            <a href="https://github.com/lbarceloss" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/lbarceloss" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/lbarceloss" target="_blank">Twitter</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Leonardo Barcelos. All rights reserved.</p>
+    </footer>
+</body>
+</html>
